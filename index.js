@@ -11,7 +11,7 @@ function Pagination(params) {
     const page  = (Number(ctx.request.page) || 1) - 1;
     const skip  = page * limit;
     ctx._pag = { limit, page, skip };
-    next();
+    return next();
   };
 }
 
