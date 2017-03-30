@@ -8,7 +8,7 @@ function Pagination(params) {
 
   this.init = (ctx, next) => {
     const limit = Number(ctx.request.query.limit) || opts.limit;
-    const page  = (Number(ctx.request.page) || 1) - 1;
+    const page  = (Number(ctx.request.query.page) || 1) - 1;
     const skip  = page * limit;
     ctx._pag = { limit, page, skip };
     return next();
